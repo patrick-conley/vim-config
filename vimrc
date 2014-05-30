@@ -126,3 +126,6 @@ command! -nargs=1 Ctabe tabe | args include/<args>.h src/<args>.c | vertical all
 " Read filetype-specific startup files
 source ~/.vim/rc/hashbang.vim
 source ~/.vim/rc/latex-shortcuts.vim
+
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
