@@ -127,5 +127,27 @@ command! -nargs=1 Ctabe tabe | args include/<args>.h src/<args>.c | vertical all
 source ~/.vim/rc/hashbang.vim
 source ~/.vim/rc/latex-shortcuts.vim
 
+" PLUGINS
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
+
+" Airline
+set laststatus=2                 " always display a status line
+let g:airline#extensions#tabline#enabled=1
+let g:airline_symbols = {}
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.linenr = '¶'
+
+" Undo tree
+nnoremap U :GundoToggle<CR>
+
+" Syntastic
+let g:syntastic_perl_checkers=['efm_perl.pl', 'perlcritic.vim' ]
+
+" Use Solarized
+colorscheme solarized
+set background=light
+
