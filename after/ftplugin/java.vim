@@ -1,1 +1,1 @@
-setlocal formatoptions=crql
+setlocal formatoptions=tcrql

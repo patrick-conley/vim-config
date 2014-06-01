@@ -1,6 +1,3 @@
-" Patrick Conley <pconley@uvic.ca>
-" Last modified: 2012 Jul 25
-"
 " Summary: specialized options for perl scripts
 
 setlocal nospell
