@@ -1,13 +1,6 @@
-" .vimrc
-" Maintainer: Patrick Conley <pconley@uvic.ca>
-" Last change: 2013 Sep 06
-
 if $SHELL =~ 'bin/fish'
    set shell=/bin/sh
 endif
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
 
 set backup     " keep a backup file
 set showcmd    " display incomplete commands
@@ -123,31 +116,39 @@ command! Fixsyntax :syntax sync fromstart
 
 command! -nargs=1 Ctabe tabe | args include/<args>.h src/<args>.c | vertical all
 
-" Read filetype-specific startup files
-source ~/.vim/rc/hashbang.vim
-source ~/.vim/rc/latex-shortcuts.vim
-
 " PLUGINS
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+" Use Solarized
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1 " fix unmatching background behind characters
+colorscheme solarized
+set background=light
+
 " Airline
 set laststatus=2                 " always display a status line
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tab_nr = 0 " show tab number
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#fnamecollapse = 0
+" Remove git changes: push the filename over
+let g:airline_section_b = "%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
+let g:airline_section_c = ""
 let g:airline_symbols = {}
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.linenr = '¶'
+
+" GitGutter
+highlight SignColumn ctermfg = 187
+highlight SignColumn ctermbg = 187
 
 " Undo tree
 nnoremap U :GundoToggle<CR>
 
 " Syntastic
 let g:syntastic_perl_checkers=['efm_perl.pl', 'perlcritic.vim' ]
-
-" Use Solarized
-colorscheme solarized
-set background=light
 

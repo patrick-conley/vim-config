@@ -1,4 +1,4 @@
- " Declare hashbangs for new files (various types)
+" Declare skeletons for filetypes I use a lot
 if has( "autocmd" )
 
    function! MatlabSkeleton() " {{{
@@ -32,7 +32,7 @@ if has( "autocmd" )
 
    endfunc " }}}
 
-   augroup HashBang
+   augroup Skeleton
       au!
       " Perl
       autocmd BufNewFile *.pl
@@ -60,11 +60,9 @@ if has( "autocmd" )
       " bash
       autocmd BufNewFile *.sh,$HOME/bin/[^.]\+
          \ 0put = '#!/bin/bash' |
-         \ 2put = '# Patrick Conley <pconley@uvic.ca>' |
-         \ 3put = '# Last modified: 0000 xxx 00' |
-         \ 4put = '#' |
-         \ 5put = '# Summary: ' |
-         \ normal 6G $
+         \ 2put = '#' |
+         \ 3put = '# Summary: ' |
+         \ normal 4G $
       " Python
       autocmd BufNewFile *.py
          \ 0put = '#!/usr/bin/python' |
@@ -73,25 +71,18 @@ if has( "autocmd" )
       " zsh
       autocmd BufNewFile *.zsh,*.zsh/**
          \ 0put = '#!/usr/bin/zsh' |
-         \ 2put = '# Patrick Conley <pconley@uvic.ca>' |
-         \ 3put = '# Last modified: 0000 xxx 00' |
-         \ 4put = '#' |
-         \ 5put = '# Summary: ' |
-         \ normal 6G $
+         \ 2put = '#' |
+         \ 3put = '# Summary: ' |
+         \ normal 5G $
       " vim
       autocmd BufNewFile *.vim
-         \ 0put = '\" Patrick Conley <pconley@uvic.ca>' |
-         \ 1put = '\" Last modified: 0000 xxx 00' |
-         \ 2put = '\"' |
-         \ 3put = '\" Summary: ' |
-         \ normal 4G $
+         \ 0put = '\" Summary: ' |
+         \ normal 2G $
       " awk
       autocmd BufNewFile *.awk
          \ 0put = '#!/usr/bin/awk' |
-         \ 2put = '# Patrick Conley <pconley@uvic.ca>' |
-         \ 3put = '# Last modified: 0000 xxx 00' |
-         \ 4put = '#' |
-         \ 5put = '# Summary: ' |
+         \ 2put = '#' |
+         \ 3put = '# Summary: ' |
          \ normal G
       " html, php
       autocmd BufNewFile *.html,*.php
