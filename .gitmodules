@@ -16,9 +16,6 @@
 [submodule "bundle/argtextobj.vim"]
 	path = bundle/argtextobj.vim
 	url = git@github.com:vim-scripts/argtextobj.vim.git
-[submodule "bundle/vim-fish"]
-	path = bundle/vim-fish
-	url = git@github.com:dag/vim-fish.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
@@ -31,3 +28,6 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
+[submodule "bundle/vim-fish"]
+	path = bundle/vim-fish
+	url = git@github.com:patrick-conley/vim-fish.git
