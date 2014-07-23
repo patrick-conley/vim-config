@@ -134,10 +134,10 @@
 " Equality {{{1
 :ino <buffer> \|~ <Bslash>sim
 :ino <buffer> \|=~ <Bslash>simeq
-:ino <buffer> \|!= <Bslash>neq
+:ino <buffer> \|=! <Bslash>neq
 :ino <buffer> \|== <Bslash>equiv
-:ino <buffer> \|>= <Bslash>geq
-:ino <buffer> \|<= <Bslash>leq
+:ino <buffer> \|=> <Bslash>geq
+:ino <buffer> \|=< <Bslash>leq
 :ino <buffer> \|<< <Bslash>ll
 :ino <buffer> \|>> <Bslash>gg
 
