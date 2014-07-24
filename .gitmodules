@@ -31,3 +31,6 @@
 [submodule "bundle/vim-fish"]
 	path = bundle/vim-fish
 	url = git@github.com:patrick-conley/vim-fish.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

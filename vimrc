@@ -147,8 +147,12 @@ highlight SignColumn ctermfg = 187
 highlight SignColumn ctermbg = 187
 
 " Undo tree
-nnoremap U :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 " Syntastic
 let g:syntastic_perl_checkers=['efm_perl.pl', 'perlcritic.vim' ]
+
+" Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
+set tags=tags,./tags,.git/tags
 
