@@ -156,3 +156,26 @@ let g:syntastic_perl_checkers=['efm_perl.pl', 'perlcritic.vim' ]
 nnoremap <leader>t :TagbarToggle<CR>
 set tags=tags,./tags,.git/tags
 
+let g:tagbar_type_fish = {
+   \ 'ctagstype' : 'fish',
+   \ 'kinds'     : [
+      \ 'g:globals:1:0',
+      \ 'f:functions:0',
+      \ ]
+   \ }
+
+let g:tagbar_type_make = {
+   \ 'ctagstype' : 'make',
+   \ 'sort'      : 0,
+   \ 'kinds'     : [
+      \ 'm:macros:1:0',
+      \ 't:targets:0',
+      \ ]
+   \ }
+
+let g:tagbar_type_vim = {
+   \ 'ctagstype' : 'vim',
+   \ 'kinds'     : [
+      \ 's:syntax:0'
+      \ ]
+   \ }
