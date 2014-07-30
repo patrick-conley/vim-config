@@ -59,13 +59,14 @@
 :ino <buffer> :tm <Bslash>missingfigure{
 
 " Arrows. {{{1
-:ino <buffer> ;an <Bslash>rightarrow
-:ino <buffer> ;aN <Bslash>Rightarrow
+:ino <buffer> ;al <Bslash>rightarrow
+:ino <buffer> ;aL <Bslash>Rightarrow
 :ino <buffer> ;ah <Bslash>leftarrow
 :ino <buffer> ;aH <Bslash>Leftarrow
-:ino <buffer> ;ac <Bslash>uparrow
-:ino <buffer> ;at <Bslash>leftrightarrow
-:ino <buffer> ;aT <Bslash>Leftrightarrow
+:ino <buffer> ;ak <Bslash>uparrow
+:ino <buffer> ;aj <Bslash>downarrow
+:ino <buffer> ;aa <Bslash>leftrightarrow
+:ino <buffer> ;aA <Bslash>Leftrightarrow
 
 " Greek {{{1
 :ino <buffer> ;ga <Bslash>alpha
