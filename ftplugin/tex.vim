@@ -19,7 +19,7 @@
 :ino <buffer> ;0F <Bslash>end{subfigure}
 :ino <buffer> ;9z <Bslash>begin{tikzpicture}
 :ino <buffer> ;0z <Bslash>end{tikzpicture}
-:ino <buffer> ;8p <Bslash>setlength{<Bslash>unitlength}{1mm}<Bslash>begin{picture}(
+:ino <buffer> ;9p <Bslash>setlength{<Bslash>unitlength}{1mm}<Bslash>begin{picture}(
 :ino <buffer> ;0p <Bslash>end{picture}
 :ino <buffer> ;9t <Bslash>begin{tabular}{
 :ino <buffer> ;0t <Bslash>end{tabular}
@@ -99,7 +99,6 @@
 :ino <buffer> ;gh <Bslash>phi
 :ino <buffer> ;Gh <Bslash>Phi
 :ino <buffer> ;gx <Bslash>chi
-:ino <buffer> ;Gx <Bslash>Chi
 :ino <buffer> ;gP <Bslash>psi
 :ino <buffer> ;GP <Bslash>Psi
 :ino <buffer> ;gw <Bslash>omega
@@ -131,6 +130,8 @@
 :ino <buffer> \|^ <Bslash>wedge
 :ino <buffer> \|v <Bslash>vee
 :ino <buffer> \|! <Bslash>neg
+:ino <buffer> \|( <Bslash>subset
+:ino <buffer> \|) <Bslash>supset
 
 " Equality {{{1
 :ino <buffer> \|~ <Bslash>sim

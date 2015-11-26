@@ -73,9 +73,10 @@ map <C-H> <C-W>h
 nnoremap j gj
 nnoremap k gk
 
+nnoremap <space> <nop>
 let mapleader = " "
 
-" emacs command mode
+" emacs-style command mode
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
 cnoremap <C-f>  <Right>
@@ -91,6 +92,11 @@ nmap <C-P> :tabp<CR>
 
 " Clear the search pattern
 noremap <CR> :let @/=""<CR>
+
+nnoremap [l :lprev<CR>
+nnoremap ]l :lnext<CR>
+nnoremap [L :lfirst<CR>
+nnoremap ]L :llast<CR>
 
 " Toggle paste mode
 nnoremap _ :set paste!<Bar>set paste?<CR>
@@ -121,7 +127,7 @@ command! -nargs=1 Ctabe tabe | args include/<args>.h src/<args>.c | vertical all
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" Use Solarized
+" Solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1 " fix unmatching background behind characters
 colorscheme solarized
@@ -134,6 +140,8 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_nr = 0 " show tab number
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#fnamecollapse = 0
+"let g:airline#extensions#eclim#enabled = 1
+"let g:airline#extensions#syntastic#enabled = 1
 " Remove git changes: push the filename over
 let g:airline_section_b = "%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
 let g:airline_section_c = ""
@@ -150,11 +158,16 @@ highlight SignColumn ctermbg = 187
 nnoremap <leader>u :GundoToggle<CR>
 
 " Syntastic
-let g:syntastic_perl_checkers=['efm_perl.pl', 'perlcritic.vim' ]
+let g:syntastic_perl_checkers = ['efm_perl.pl', 'perlcritic.vim' ]
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = '>>'
+let g:syntastic_warning_symbol = '>'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
-set tags=tags,./tags,.git/tags
+set tags=tags,./tags,.git/tags,.hg/tags
 
 let g:tagbar_type_fish = {
    \ 'ctagstype' : 'fish',
@@ -179,3 +192,11 @@ let g:tagbar_type_vim = {
       \ 's:syntax:0'
       \ ]
    \ }
+
+" Eclim
+nnoremap <leader>jc :JavaCorrect<Enter>
+nnoremap <leader>jd :JavaDocPreview<Enter>
+nnoremap <leader>jf :%JavaFormat<Enter>
+inoremap <C-Space> <C-x><C-u>
+imap <C-@> <C-Space>
+
