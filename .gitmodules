@@ -34,3 +34,9 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/vim-velocity"]
+	path = bundle/vim-velocity
+	url = git@github.com:lepture/vim-velocity.git
+[submodule "bundle/DirDiff"]
+	path = bundle/DirDiff
+	url = https://github.com/vim-scripts/DirDiff.vim.git

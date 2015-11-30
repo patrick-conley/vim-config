@@ -96,21 +96,21 @@ if has( "autocmd" )
          \ $put = '   </head>' |
          \ $put = '' |
          \ $put = '   <body>' |
- "       autocmd BufNewFile presentation.tex
- "          \ 0put = '\documentclass{beamer}' |
- "          \ 1put = '\mode<presentation>' |
- "          \ 2put = '\beamertemplatenavigationsymbolsempty' |
- "          \ 3put = '\usetheme{Malmoe}' |
- "          \ 6put = '\title{}' |
- "          \ $put = '\author{}' |
- "          \ $put = '\institute{} % I use this do describe what the presentation is for' |
- "          \ $put = '' |
- "          \ $put = '\begin{document}' |
- "          \ $put = '' |
- "          \ $put = '\begin{frame}' |
- "          \ $put = '\titlepage' |
- "          \ $put = '\end{frame}' |
- "          \ normal 5G
+        autocmd BufNewFile presentation.tex
+           \ 0put = '\documentclass{beamer}' |
+           \ 1put = '\mode<presentation>' |
+           \ 2put = '\beamertemplatenavigationsymbolsempty' |
+           \ 3put = '\usetheme{Malmoe}' |
+           \ 5put = '\title{}' |
+           \ $put = '\author{}' |
+           \ $put = '\institute{} % I use this do describe what the presentation is for' |
+           \ $put = '' |
+           \ $put = '\begin{document}' |
+           \ $put = '' |
+           \ $put = '\begin{frame}' |
+           \ $put = '\titlepage' |
+           \ $put = '\end{frame}' |
+           \ normal 5G
       " LaTeX
  "       autocmd BufNewFile report.tex
       autocmd BufNewFile *.tex

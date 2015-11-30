@@ -6,4 +6,5 @@ augroup filetypedetect
    au! BufRead,BufNewFile *.txt  setfiletype txt
    au! BufRead,BufNewFile *.md   setfiletype markdown
    au! BufRead,BufNewFile *.tex  setlocal filetype=tex
+   au! BufRead,BufNewFile *.gradle setfiletype groovy
 augroup END

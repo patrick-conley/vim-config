@@ -42,6 +42,8 @@ set expandtab                    " Use spaces for tabs
 
 set number                       " show line numbers
 set textwidth=78                 " use 80-column text everywhere
+set linebreak                    " Soft wrap lines at word breaks
+let &showbreak = '> '
 
 set foldmethod=marker            " Use folds
 set foldminlines=2
@@ -110,7 +112,11 @@ cabbrev h vertical help
 " COMMANDS
 
 " Print the date
-command! VD :r! vd
+function PrintDate()
+   silent !clear
+   execute "r!" . 'date +"\%n\%a \%d \%b \%Y\%n===============\%n"'
+endfunction
+command! Date :call PrintDate()
 
 " echo syntax of the text under the cursor
 command! Syntax :echo
@@ -164,6 +170,9 @@ let g:syntastic_error_symbol = '>>'
 let g:syntastic_warning_symbol = '>'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_quiet_messages = { "regex": "Bad line breaking " }
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled=1
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -200,3 +209,6 @@ nnoremap <leader>jf :%JavaFormat<Enter>
 inoremap <C-Space> <C-x><C-u>
 imap <C-@> <C-Space>
 
+" DirDif
+let g:DirDiffExcludes = "*~,*.swp"
+let g:DirDiffAddArgs = "-b"
