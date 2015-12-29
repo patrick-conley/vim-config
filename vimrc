@@ -6,6 +6,7 @@ set backup     " keep a backup file
 set showcmd    " display incomplete commands
 set incsearch  " do incremental searching
 set autoindent " set autoindenting on
+syntax on
 
 set hlsearch " highlight search results
 
