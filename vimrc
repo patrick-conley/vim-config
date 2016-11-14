@@ -150,7 +150,6 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#fnamecollapse = 0
 "let g:airline#extensions#eclim#enabled = 1
 "let g:airline#extensions#syntastic#enabled = 1
-" Remove git changes: push the filename over
 let g:airline_section_b = "%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
 let g:airline_section_c = ""
 let g:airline_symbols = {}
@@ -173,12 +172,12 @@ let g:syntastic_warning_symbol = '>'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_quiet_messages = { "regex": "Bad line breaking " }
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled=1
+let g:syntastic_java_checkers = [ 'javac', 'checkstyle' ]
+let g:syntastic_java_javac_config_file_enabled = 1
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
-set tags=tags,./tags,.git/tags,.hg/tags
+set tags=tags,./tags,.git/tags,.hg/tags,.svn/tags
 
 let g:tagbar_type_fish = {
    \ 'ctagstype' : 'fish',
