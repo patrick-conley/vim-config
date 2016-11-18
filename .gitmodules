@@ -41,5 +41,5 @@
 	path = bundle/DirDiff
 	url = https://github.com/vim-scripts/DirDiff.vim.git
 [submodule "bundle/vim-airline-themes"]
-	path = bndle/vim-airline-themes
+	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
