@@ -7,4 +7,5 @@ augroup filetypedetect
    au! BufRead,BufNewFile *.md   setfiletype markdown
    au! BufRead,BufNewFile *.tex  setlocal filetype=tex
    au! BufRead,BufNewFile *.gradle setfiletype groovy
+   au! BufRead,BufNewFile *.t    setfiletype perl
 augroup END

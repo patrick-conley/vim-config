@@ -149,7 +149,7 @@ let g:airline#extensions#tabline#show_tab_nr = 0 " show tab number
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#fnamecollapse = 0
 "let g:airline#extensions#eclim#enabled = 1
-"let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 let g:airline_section_b = "%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
 let g:airline_section_c = ""
 let g:airline_symbols = {}
@@ -165,6 +165,7 @@ highlight SignColumn ctermbg = 187
 nnoremap <leader>u :GundoToggle<CR>
 
 " Syntastic
+let g:syntastic_aggregate_checkers = 1
 let g:syntastic_perl_checkers = ['efm_perl.pl', 'perlcritic.vim' ]
 let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol = '>>'

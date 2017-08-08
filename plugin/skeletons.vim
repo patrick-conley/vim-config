@@ -55,7 +55,9 @@ if has( "autocmd" )
          \ 1put = 'use warnings;' |
          \ 2put = 'use English qw/ -no-match-vars/;' |
          \ 3put = 'use utf8;' |
-         \ 4put = 'use Test::Most tests => no_plan;' |
+         \ 4put = 'use v5.18.0;' |
+         \ 6put = 'use Test::Most;' |
+         \ 8put = 'done_testing();' |
          \ normal G
       " bash
       autocmd BufNewFile *.sh,$HOME/bin/[^.]\+
