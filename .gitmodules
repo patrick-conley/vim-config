@@ -40,6 +40,6 @@
 [submodule "bundle/DirDiff"]
 	path = bundle/DirDiff
 	url = https://github.com/vim-scripts/DirDiff.vim.git
-[submodule "/home/pconley/.vim/bundle/vim-airline-themes"]
-	path = /home/pconley/.vim/bundle/vim-airline-themes
+[submodule "bundle/vim-airline-themes"]
+	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
