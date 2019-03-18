@@ -57,7 +57,8 @@ if has( "autocmd" )
          \ 3put = 'use utf8;' |
          \ 4put = 'use v5.18.0;' |
          \ 6put = 'use Test::Most;' |
-         \ 8put = 'done_testing();' |
+         \ $put = '' |
+         \ $put = 'done_testing();' |
          \ normal G
       " bash
       autocmd BufNewFile *.sh,$HOME/bin/[^.]\+

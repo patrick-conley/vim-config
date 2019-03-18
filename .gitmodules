@@ -43,3 +43,12 @@
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "pack/git-plugins/start/vim-prettier"]
+	path = pack/git-plugins/start/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git
+[submodule "pack/git-plugins/start/vim-javascript"]
+	path = pack/git-plugins/start/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "pack/git-plugins/start/ale"]
+	path = pack/git-plugins/start/ale
+	url = git@github.com:w0rp/ale.git

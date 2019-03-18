@@ -57,6 +57,9 @@ set cryptmethod=blowfish         " use strong(ish) encryption
 set modeline                     " Turn on modeline-checking (eg. vim:ft=txt:)
 set modelines=5
 
+set exrc                         " enable project-specific vimrc
+set secure
+
 " Save undo after quit
 if has("persistent_undo")
    set undofile
@@ -114,11 +117,17 @@ cabbrev h vertical help
 " COMMANDS
 
 " Print the date
-function PrintDate()
+function! PrintDate()
    silent !clear
-   execute "r!" . 'date +"\%n\%a \%d \%b \%Y\%n===============\%n"'
+   execute "0r!" . 'date +"\%n\%a \%d \%b \%Y\%n===============\%n"'
 endfunction
 command! Date :call PrintDate()
+
+function! SvnBranch()
+   silent !clear
+   execute "0r!" . 'svn info --show-item relative-url $(svn info --show-item wc-root) | grep -o "[^/]*$"'
+endfunction
+command! Branch :call SvnBranch()
 
 " echo syntax of the text under the cursor
 command! Syntax :echo
@@ -135,6 +144,9 @@ command! -nargs=1 Ctabe tabe | args include/<args>.h src/<args>.c | vertical all
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+packloadall
+silent! helptags ALL
+
 " Solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1 " fix unmatching background behind characters
@@ -149,7 +161,7 @@ let g:airline#extensions#tabline#show_tab_nr = 0 " show tab number
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#fnamecollapse = 0
 "let g:airline#extensions#eclim#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#syntastic#enabled = 1
 let g:airline_section_b = "%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
 let g:airline_section_c = ""
 let g:airline_symbols = {}
@@ -162,19 +174,22 @@ highlight SignColumn ctermfg = 187
 highlight SignColumn ctermbg = 187
 
 " Undo tree
+let g:gundo_prefer_python3 = 1
+let g:gundo_right = 1
+let g:gundo_preview_bottom = 1
 nnoremap <leader>u :GundoToggle<CR>
 
 " Syntastic
-let g:syntastic_aggregate_checkers = 1
-let g:syntastic_perl_checkers = ['efm_perl.pl', 'perlcritic.vim' ]
-let g:syntastic_check_on_open = 1
-let g:syntastic_error_symbol = '>>'
-let g:syntastic_warning_symbol = '>'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_quiet_messages = { "regex": "Bad line breaking " }
-let g:syntastic_java_checkers = [ 'javac', 'checkstyle' ]
-let g:syntastic_java_javac_config_file_enabled = 1
+"let g:syntastic_aggregate_checkers = 1
+"let g:syntastic_perl_checkers = ['efm_perl.pl', 'perlcritic.vim' ]
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_error_symbol = '>>'
+"let g:syntastic_warning_symbol = '>'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_quiet_messages = { "regex": "Bad line breaking " }
+"let g:syntastic_java_checkers = [ 'javac', 'checkstyle' ]
+"let g:syntastic_java_javac_config_file_enabled = 1
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -214,3 +229,8 @@ imap <C-@> <C-Space>
 " DirDif
 let g:DirDiffExcludes = "*~,*.swp"
 let g:DirDiffAddArgs = "-b"
+
+" Prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
