@@ -52,3 +52,6 @@
 [submodule "pack/git-plugins/start/ale"]
 	path = pack/git-plugins/start/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "pack/git-plugins/start/vim-jsx"]
+	path = pack/git-plugins/start/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git
