@@ -55,3 +55,6 @@
 [submodule "pack/git-plugins/start/vim-jsx"]
 	path = pack/git-plugins/start/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
+[submodule "/home/pconley/.vim/pack/aliou/start/bats.vim"]
+	path = /home/pconley/.vim/pack/aliou/start/bats.vim
+	url = https://github.com/aliou/bats.vim.git
