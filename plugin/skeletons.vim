@@ -146,5 +146,8 @@ if has( "autocmd" )
          \ $put = '\end{document}' |
          \ normal 7G
       autocmd BufNewFile *.m ks|call MatlabSkeleton()|'s
+      autocmd BufNewFile *.bats
+               \ 0put '#!/usr/bin/env bats' |
+               \ normal G
    augroup end
 endif
