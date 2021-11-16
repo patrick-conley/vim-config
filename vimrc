@@ -116,19 +116,6 @@ cabbrev h vertical help
 
 " COMMANDS
 
-" Print the date
-function! PrintDate()
-   silent !clear
-   execute "0r!" . 'date +"\%n\%a \%d \%b \%Y\%n===============\%n"'
-endfunction
-command! Date :call PrintDate()
-
-function! SvnBranch()
-   silent !clear
-   execute "0r!" . 'svn info --show-item relative-url $(svn info --show-item wc-root) | grep -o "[^/]*$"'
-endfunction
-command! Branch :call SvnBranch()
-
 " echo syntax of the text under the cursor
 command! Syntax :echo
          \ "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> '
@@ -189,7 +176,7 @@ nnoremap <leader>u :GundoToggle<CR>
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_quiet_messages = { "regex": "Bad line breaking " }
 "let g:syntastic_java_checkers = [ 'javac', 'checkstyle' ]
-"let g:syntastic_java_javac_config_file_enabled = 1
+let g:syntastic_java_javac_config_file_enabled = 1
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -219,16 +206,11 @@ let g:tagbar_type_vim = {
       \ ]
    \ }
 
-" Eclim
-nnoremap <leader>jc :JavaCorrect<Enter>
-nnoremap <leader>jd :JavaDocPreview<Enter>
-nnoremap <leader>jf :%JavaFormat<Enter>
-inoremap <C-Space> <C-x><C-u>
-imap <C-@> <C-Space>
+" This is disabled because one of the dependencies of one of our modules
+" depends on jshint, so ALE assumes that we use it
+let g:ale_linters_ignore = {'javascript': ['jshint']}
 
-" DirDif
-let g:DirDiffExcludes = "*~,*.swp"
-let g:DirDiffAddArgs = "-b"
+nnoremap <C-]> :ALEGoToDefinition
 
 " Prettier
 let g:prettier#quickfix_enabled = 0
