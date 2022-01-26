@@ -114,6 +114,13 @@ nnoremap Q gq}
 " Open help in a vertical split
 cabbrev h vertical help
 
+" Buffers
+cabbrev tabb :tabe|b
+cabbrev sb :sp|b
+cabbrev bsb :bel sp|b
+cabbrev vsb :vsp|b
+cabbrev bvsb :bel vsp|b
+
 " COMMANDS
 
 " echo syntax of the text under the cursor
