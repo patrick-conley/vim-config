@@ -115,11 +115,11 @@ nnoremap Q gq}
 cabbrev h vertical help
 
 " Buffers
-cabbrev tabb :tabe|b
-cabbrev sb :sp|b
-cabbrev bsb :bel sp|b
-cabbrev vsb :vsp|b
-cabbrev bvsb :bel vsp|b
+cabbrev tabb tabe|b
+cabbrev sb sp|b
+cabbrev bsb bel sp|b
+cabbrev vsb vsp|b
+cabbrev bvsb bel vsp|b
 
 " COMMANDS
 
