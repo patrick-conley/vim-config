@@ -184,6 +184,8 @@ nnoremap <leader>u :GundoToggle<CR>
 "let g:syntastic_quiet_messages = { "regex": "Bad line breaking " }
 "let g:syntastic_java_checkers = [ 'javac', 'checkstyle' ]
 let g:syntastic_java_javac_config_file_enabled = 1
+" requires syntastic >0.4.6
+let g:syntastic_bats_checkers = [ 'sh/shellcheck' ]
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -212,12 +214,6 @@ let g:tagbar_type_vim = {
       \ 's:syntax:0'
       \ ]
    \ }
-
-" This is disabled because one of the dependencies of one of our modules
-" depends on jshint, so ALE assumes that we use it
-let g:ale_linters_ignore = {'javascript': ['jshint']}
-
-nnoremap <C-]> :ALEGoToDefinition
 
 " Prettier
 let g:prettier#quickfix_enabled = 0
