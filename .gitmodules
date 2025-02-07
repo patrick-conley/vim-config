@@ -61,3 +61,6 @@
 [submodule "pack/git-plugins/start/context.vim"]
 	path = pack/git-plugins/start/context.vim
 	url = git@github.com:wellle/context.vim.git
+[submodule "pack/git-plugins/start/json5.vim"]
+	path = pack/git-plugins/start/json5.vim
+	url = https://github.com/gutenye/json5.vim.git
