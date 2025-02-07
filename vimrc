@@ -36,7 +36,7 @@ if has("autocmd")
 endif " has("autocmd")
 
 " OPTIONS
-set diffopt+=iwhite
+"set diffopt+=iwhite
 
 set tabstop=3                    " Set tab length
 set shiftwidth=3
