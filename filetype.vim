@@ -10,4 +10,5 @@ augroup filetypedetect
    au! BufRead,BufNewFile *.t    setfiletype perl
    au! BufRead,BufNewFile *.tsx  setfiletype javascript.tsx
    au! BufRead,BufNewFile *.ts   setfiletype javascript.ts
+   au! BufRead,BufNewFile Jenkinsfile* setfiletype groovy
 augroup END
